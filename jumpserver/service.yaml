@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: jumpserver
+spec:
+  selector:
+    app: jumpserver
+  ports:
+    - name: app
+      protocol: TCP
+      port: 8080
+      targetPort: 8080
+    - name: app
+      protocol: TCP
+      port: 8070
+      targetPort: 8070

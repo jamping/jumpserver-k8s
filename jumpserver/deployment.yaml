@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jumpserver
+  labels:
+    app: jumpserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jumpserver
+  template:
+    metadata:
+      labels:
+        app: jumpserver
+    spec:
+      containers:
+      - name: jumpserver
+        image: jumpserver:1.0
+        ports:
+        - containerPort: 8080
+          name: app
+          protocol: tcp
+        - containerPort: 8070
+          name: app
+          protocol: tcp

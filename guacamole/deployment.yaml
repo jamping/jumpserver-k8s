@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: guacamole
+  labels:
+    app: jumpserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jumpserver
+  template:
+    metadata:
+      labels:
+        app: jumpserver
+    spec:
+      containers:
+      - name: guacamole
+        image: jumpserver:1.0
+        ports:
+        - containerPort: 8081
+          name: app
+          protocol: tcp
