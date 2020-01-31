@@ -17,6 +17,21 @@ spec:
       containers:
       - name: guacamole
         image: jumpserver:1.0
+        env:
+          - name: JUMPSERVER_SERVER
+            value: http://jumpserver:8080
+          - name: BOOTSTRAP_TOKEN
+            value: 7Q11Vz6R2J6BLAd9
+          - name: JUMPSERVER_KEY_DIR
+            value: /config/guacamole/keys
+          - name: GUACAMOLE_HOME
+            value: /config/guacamole
+          - name: GUACAMOLE_LOG_LEVEL
+            value: ERROR
+          - name: JUMPSERVER_CLEAR_DRIVE_SESSION
+            value: true
+          - name: JUMPSERVER_ENABLE_DRIVE
+            value: true
         ports:
         - containerPort: 8081
           name: app

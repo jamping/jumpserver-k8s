@@ -17,6 +17,11 @@ spec:
       containers:
       - name: koko
         image: jumpserver:1.0
+        env:
+          - name: CORE_HOST
+            value: http://jumpserver:8080
+          - name: BOOTSTRAP_TOKEN
+            value: 7Q11Vz6R2J6BLAd9
         ports:
         - containerPort: 2222
           name: ssh
