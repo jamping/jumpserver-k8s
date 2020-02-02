@@ -4,19 +4,19 @@ resources:
 - deployment.yaml
 - service.yaml
 
-configMapGenerator:
-- name: nginxconf
-  files:
-  - nginx.conf
+# configMapGenerator:
+# - name: nginxconf
+#   files:
+#   - nginx.conf
 
 commonLabels:
   jumpserver: nginx
 
 images:
 - name: jumpserver:1.0
-  newName: nginx
-  newTag: 1.17.8
+  newName: harbor.xylink.com/xylink/jms_nginx
+  newTag: 1.5.6
 
 replicas:
 - name: nginx
-  count: 3
+  count: 1

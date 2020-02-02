@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jumpserver
+  name: core
 spec:
   selector:
     app: jumpserver
@@ -10,7 +10,7 @@ spec:
       protocol: TCP
       port: 8080
       targetPort: 8080
-    - name: app
+    - name: ws
       protocol: TCP
       port: 8070
       targetPort: 8070

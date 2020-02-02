@@ -17,31 +17,32 @@ spec:
       containers:
       - name: jumpserver
         image: jumpserver:1.0
+        # command: ["/bin/sh","-c","sleep 50000"]
         env:
           - name: SECRET_KEY
-            value: B3f2w8P2PfxIAS7s4URrD9YmSbtqX4vXdPUL217kL9XPUOWrdd
+            value: "B3f2w8P2PfxIAS7s4URrD9YmSbtqX4vXdPUL217kL9XPUOWrdd"
           - name: BOOTSTRAP_TOKEN
-            value: 7Q11Vz6R2J6BLAd9
+            value: "7Q11Vz6R2J6BLAd9"
           - name: DB_HOST
-            value: rm-2zekkzz8l65nc7eq8.mysql.rds.aliyuncs.com
+            value: "bbbbbbbbb"
           - name: DB_PORT
-            value: 3306
+            value: "3306"
           - name: DB_USER
-            value: jumpserver
+            value: "jumpserver"
           - name: DB_PASSWORD
-            value: Wq7u0Bn8EABh3J91G
+            value: "nnnnnnn"
           - name: DB_NAME
-            value: jumpserver
+            value: "jumpserver"
           - name: REDIS_HOST
-            value: jumpserver-redis-ha
+            value: redis
           - name: REDIS_PORT
-            value: 26379
+            value: "6379"
           - name: REDIS_PASSWORD
-            value: 
+            value: "8URXPL2x3HZMi7xoGTdk3Upj"
         ports:
         - containerPort: 8080
           name: app
-          protocol: tcp
+          protocol: TCP
         - containerPort: 8070
-          name: app
-          protocol: tcp
+          name: ws
+          protocol: TCP

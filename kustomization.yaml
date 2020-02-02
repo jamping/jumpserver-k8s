@@ -6,3 +6,8 @@ resources:
   - nginx
   - jumpserver
   - redis
+
+patches:
+- path: pullimage.yaml
+  target:
+    kind: Deployment

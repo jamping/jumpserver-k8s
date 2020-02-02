@@ -20,15 +20,15 @@ spec:
         ports:
         - containerPort: 80
           name: app
-          protocol: tcp
-          volumeMounts:
-            - name: config
-              mountPath: /etc/nginx/
-              subpat: nginx.conf
-      volumes:
-        - name: config
-          configMap:
-            name: nginxconf
-            items:
-              - key: nginx.conf
-                path: nginx.conf
+          protocol: TCP
+      #     volumeMounts:
+      #       - name: config
+      #         mountPath: /etc/nginx/
+      #         subpat: nginx.conf
+      # volumes:
+      #   - name: config
+      #     configMap:
+      #       name: nginxconf
+      #       items:
+      #         - key: nginx.conf
+      #           path: nginx.conf
